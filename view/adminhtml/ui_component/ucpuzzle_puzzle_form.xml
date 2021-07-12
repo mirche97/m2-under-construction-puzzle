@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<form xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Ui:etc/ui_configuration.xsd">
+    <argument name="data" xsi:type="array">
+        <item name="js_config" xsi:type="array">
+            <item name="provider" xsi:type="string">ucpuzzle_puzzle_form.ucpuzzle_puzzle_form_data_source</item>
+            <item name="deps" xsi:type="string">ucpuzzle_puzzle_form.ucpuzzle_puzzle_form_data_source</item>
+            <item name="namespace" xsi:type="string">ucpuzzle_puzzle_form</item>
+        </item>
+        <item name="label" xsi:type="string" translate="true">Puzzle Form</item>
+        <item name="layout" xsi:type="array">
+            <item name="type" xsi:type="string">tabs</item>
+        </item>
+
+        <item name="buttons" xsi:type="array">
+            <item name="save" xsi:type="string">Mirche\UCPuzzle\Block\Adminhtml\Buttons\Puzzle\SaveButton</item>
+            <item name="default_tasks" xsi:type="string">Mirche\UCPuzzle\Block\Adminhtml\Buttons\Puzzle\DefaultTasksButton</item>
+        </item>
+    </argument>
+
+    <dataSource name="puzzle_form_data_source">
+        <argument name="dataProvider" xsi:type="configurableObject">
+            <argument name="class" xsi:type="string">Mirche\UCPuzzle\Model\Puzzle\DataProvider</argument>
+            <argument name="name" xsi:type="string">ucpuzzle_puzzle_form_data_source</argument>  <!-- name from line 5 -->
+            <argument name="primaryFieldName" xsi:type="string">puzzle_id</argument>
+            <argument name="requestFieldName" xsi:type="string">id</argument>
+        </argument>
+        <argument name="data" xsi:type="array">
+            <item name="js_config" xsi:type="array">
+                <item name="submit_url" xsi:type="url" path="ucpuzzle/puzzle/save"/>
+                <item name="component" xsi:type="string">Magento_Ui/js/form/provider</item>
+            </item>
+        </argument>
+    </dataSource>
+
+    <fieldset name="puzzle">
+        <argument name="data" xsi:type="array">
+            <item name="config" xsi:type="array">
+                <item name="label" xsi:type="string" translate="true">Puzzle dimension</item>
+            </item>
+        </argument>
+
+        <!-- This field represents form id and is hidden -->
+        <field name="puzzle_id">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="visible" xsi:type="boolean">false</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">puzzle_form_data_source</item>
+                </item>
+            </argument>
+        </field>
+
+        <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
+        <field name="rows">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Rows</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">puzzle_form_data_source</item>
+                </item>
+            </argument>
+        </field>
+
+
+        <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
+        <field name="columns">
+            <argument name="data" xsi:type="array">
+                <item name="config" xsi:type="array">
+                    <item name="label" xsi:type="string">Columns</item>
+                    <item name="visible" xsi:type="boolean">true</item>
+                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="formElement" xsi:type="string">input</item>
+                    <item name="source" xsi:type="string">puzzle_form_data_source</item>
+                </item>
+            </argument>
+        </field>
+
+    </fieldset>
+</form>

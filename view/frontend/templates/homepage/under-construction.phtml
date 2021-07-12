@@ -1,0 +1,57 @@
+<?php
+/** @var \Mirche\UCPuzzle\Block\HomePage\UnderConstruction $this */
+?>
+
+<div id="under-construction-block" style="display: flex; justify-content: center; position: relative;">
+
+    <svg width="<?php echo $this->getWidth(); ?>" height="<?php echo $this->getHeight(); ?> "
+         viewBox="0 0 100% 100%">
+        <metadata>
+            <style>
+                #background {
+                    fill: #990099;
+                }
+
+                path.finished {
+                    fill: #FDD835;
+                }
+
+                path.not-finished {
+                    fill: none;
+                    stroke: #FDD835;
+                    stroke-width: 1px;
+                }
+            </style>
+        </metadata>
+        <rect id="background" x="0" y="0" width="100%" height="100%"></rect>
+
+        <?php /** @var \Mirche\UCPuzzle\Model\Task $task */ ?>
+        <?php $timer=1; ?>
+        <?php foreach ($this->getTasks() as $task): ?>
+            <path class="<?php echo $task->isFinished() ? 'finished' : 'not-finished'; ?>"
+                  d="<?php echo $task->getPath(); ?> ">
+
+                <?php if ($task->isFinished()): ?>
+
+                    <?php $animateBegin = isset($previousId) ? $previousId . '.end' :  (string)$timer . 's'; ?>
+                    <?php $timer = $timer + $this->getAnimateDuration($task); ?>
+                    <?php $opacityEnd = $timer +  $this->getAnimateDuration($task); ?>
+                    <?php $previousId = $this->getAnimateId($task); ?>
+
+                    <animateMotion id="<?php echo $this->getAnimateId($task); ?>"
+                                   path="<?php echo $this->getMotionPath($task); ?>"
+                                   begin="<?php echo $animateBegin; ?>"
+                                   dur="<?php echo $this->getAnimateDuration($task);?>s"
+
+                                   repeatCount="1" fill="freeze"/>
+                    <animate attributeName="opacity" from="0" to="1"  begin="0" end="<?php echo $animateBegin; ?>" />
+                <?php endif; ?>
+            </path>
+
+            <?php if ($task->showName()): ?>
+                <text <?php echo $this->getTextAttributes($task); ?>><?php echo $task->getName(); ?></text>
+            <?php endif; ?>
+        <?php endforeach; ?>
+
+    </svg>
+</div>

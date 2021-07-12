@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Mirche_UCPuzzle::ucpuzzle" title="UC Puzzle" module="Mirche_UCPuzzle"  sortOrder="100" resource="Mirche_UCPuzzle::ucpuzzle"/>
+        <add id="Mirche_UCPuzzle::puzzle" title="Manage Puzzles" module="Mirche_UCPuzzle" sortOrder="10" action="ucpuzzle/puzzle"   resource="Mirche_UCPuzzle::puzzle" parent="Mirche_UCPuzzle::ucpuzzle"/>
+        <add id="Mirche_UCPuzzle::piece" title="Manage Pieces" module="Mirche_UCPuzzle" sortOrder="20" action="ucpuzzle/piece"  resource="Mirche_UCPuzzle::piece" parent="Mirche_UCPuzzle::ucpuzzle"/>
+        <add id="Mirche_UCPuzzle::ucpuzzle_configuration" title="Configuration" module="Mirche_UCPuzzle" sortOrder="99" action="adminhtml/system_config/edit/section/ucpuzzle/"  resource="Mirche_UCPuzzle::ucpuzzle_configuration" parent="Mirche_UCPuzzle::ucpuzzle"/>
+        <add id="Mirche_UCPuzzle::deafult_puzzle" title="Default Puzzle" module="Mirche_UCPuzzle" sortOrder="10" action="ucpuzzle/puzzle/edit/id/1"   resource="Mirche_UCPuzzle::puzzle" parent="Mirche_UCPuzzle::ucpuzzle"/>
+    </menu>
+</config>
