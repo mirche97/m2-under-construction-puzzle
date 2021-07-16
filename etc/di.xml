@@ -26,4 +26,17 @@
             <argument name="resourceModel" xsi:type="string">Mirche\UCPuzzle\Model\ResourceModel\Piece</argument>
         </arguments>
     </virtualType>
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="mirche_ucpuzzle_task_listing_data_source" xsi:type="string">Mirche\UCPuzzle\Model\ResourceModel\Task\Grid\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Mirche\UCPuzzle\Model\ResourceModel\Task\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">ucpuzzle_task</argument>
+            <argument name="resourceModel" xsi:type="string">Mirche\UCPuzzle\Model\ResourceModel\Task</argument>
+        </arguments>
+    </virtualType>
 </config>

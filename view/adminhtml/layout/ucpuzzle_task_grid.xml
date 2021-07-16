@@ -1,0 +1,7 @@
+<layout xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/layout_generic.xsd">
+    <update handle="formkey"/>
+    <update handle="ucpuzzle_task_grid_handle"/>
+    <container name="root">
+        <block class="Magento\Backend\Block\Widget\Grid\Container" name="ucpuzzle_task.grid.container" template="Magento_Backend::widget/grid/container/empty.phtml"/>
+    </container>
+</layout>
