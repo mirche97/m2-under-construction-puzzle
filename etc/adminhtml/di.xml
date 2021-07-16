@@ -1,29 +1,3 @@
 <?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
-    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
-        <arguments>
-            <argument name="collections" xsi:type="array">
-                <item name="mirche_ucpuzzle_puzzle_listing_data_source" xsi:type="string">Mirche\UCPuzzle\Model\ResourceModel\Puzzle\Grid\Collection</item>
-            </argument>
-        </arguments>
-    </type>
-    <virtualType name="Mirche\UCPuzzle\Model\ResourceModel\Puzzle\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
-        <arguments>
-            <argument name="mainTable" xsi:type="string">ucpuzzle_puzzle</argument>
-            <argument name="resourceModel" xsi:type="string">Mirche\UCPuzzle\Model\ResourceModel\Puzzle</argument>
-        </arguments>
-    </virtualType>
-    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
-        <arguments>
-            <argument name="collections" xsi:type="array">
-                <item name="mirche_ucpuzzle_piece_listing_data_source" xsi:type="string">Mirche\UCPuzzle\Model\ResourceModel\Piece\Grid\Collection</item>
-            </argument>
-        </arguments>
-    </type>
-    <virtualType name="Mirche\UCPuzzle\Model\ResourceModel\Piece\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
-        <arguments>
-            <argument name="mainTable" xsi:type="string">ucpuzzle_piece</argument>
-            <argument name="resourceModel" xsi:type="string">Mirche\UCPuzzle\Model\ResourceModel\Piece</argument>
-        </arguments>
-    </virtualType>
 </config>
