@@ -3,7 +3,7 @@
     <update handle="styles"/>
     <body>
         <referenceContainer name="content">
-            <uiComponent name="ucpuzzle_puzzle_form" />
+            <uiComponent name="ucpuzzle_task_form" />
         </referenceContainer>
     </body>
 </page>

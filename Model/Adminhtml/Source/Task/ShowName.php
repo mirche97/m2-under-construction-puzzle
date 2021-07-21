@@ -16,7 +16,7 @@ class ShowName implements \Magento\Framework\Data\OptionSourceInterface
             ],
             [
                 'value' => '1',
-                'label' => __('YEs'),
+                'label' => __('Yes'),
             ],
         ];
     }

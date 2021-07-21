@@ -39,7 +39,6 @@
             </item>
         </argument>
 
-        <!-- This field represents form id and is hidden -->
         <field name="puzzle_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -51,21 +50,18 @@
             </argument>
         </field>
 
-        <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
         <field name="rows">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string">Rows</item>
                     <item name="visible" xsi:type="boolean">true</item>
-                    <item name="dataType" xsi:type="string">text</item>
+                    <item name="dataType" xsi:type="string" field has data t>text</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">puzzle_form_data_source</item>
                 </item>
             </argument>
         </field>
 
-
-        <!-- This field has data type 'text' and standard 'input' form element and looks like input -->
         <field name="columns">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -78,5 +74,28 @@
             </argument>
         </field>
 
+        <insertListing name="task_grid">
+            <settings>
+                <dataLinks>
+                    <exports>true</exports>
+                    <imports>true</imports>
+                </dataLinks>
+                <externalProvider>ucpuzzle_task_listing.mirche_ucpuzzle_task_listing_data_source</externalProvider>
+                <selectionsProvider>ucpuzzle_task_listing.ucpuzzle_task_listing.columns.ids</selectionsProvider>
+                <autoRender>true</autoRender>
+                <externalFilterMode>true</externalFilterMode>
+                <dataScope>ucpuzzle_task_listing</dataScope>
+                <ns>ucpuzzle_task_listing</ns>
+                <exports>
+                    <link name="puzzle_id">${ $.externalProvider }:params.puzzle_id</link>
+                </exports>
+                <imports>
+                    <link name="puzzle_id">${ $.provider }:data.puzzle_id</link>
+                </imports>
+                <imports>
+                    <link name="puzzle_id">1</link>
+                </imports>
+            </settings>
+        </insertListing>
     </fieldset>
 </form>
