@@ -16,7 +16,6 @@ use Mirche\UCPuzzle\Model\Task;
 
 class UnderConstruction extends Template
 {
-
     /**
      * Current template name
      *

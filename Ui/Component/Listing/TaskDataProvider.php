@@ -7,7 +7,6 @@ use Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider;
 
 class TaskDataProvider extends DataProvider
 {
-
     public function getData()
     {
         /** @var SearchResultInterface $collection */
