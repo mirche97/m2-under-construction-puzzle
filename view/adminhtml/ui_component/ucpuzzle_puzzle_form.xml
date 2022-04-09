@@ -39,6 +39,7 @@
             </item>
         </argument>
 
+        <!-- This field represents form id and is hidden -->
         <field name="puzzle_id">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -55,7 +56,7 @@
                 <item name="config" xsi:type="array">
                     <item name="label" xsi:type="string">Rows</item>
                     <item name="visible" xsi:type="boolean">true</item>
-                    <item name="dataType" xsi:type="string" field has data t>text</item>
+                    <item name="dataType" xsi:type="string">text</item>
                     <item name="formElement" xsi:type="string">input</item>
                     <item name="source" xsi:type="string">puzzle_form_data_source</item>
                 </item>
